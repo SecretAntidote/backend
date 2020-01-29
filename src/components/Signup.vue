@@ -26,7 +26,13 @@ export default {
                 password: this.password
             }
         axios.post('http://localhost:3000/signup', newUser)
-           
+           .then(res => {
+               // eslint-disable-next-line no-console
+               console.log(res)
+           }, err=> {
+               // eslint-disable-next-line no-console
+               console.log(err.response)
+           })
         }
     }
 }

@@ -20,10 +20,19 @@ app.post('/signup', (req, res, next) => {
     const newUser = new User({
         email: req.body.email,
         name: req.body.name,
-       
         password: req.body.password,
     })
-   
+    newUser.save(err => {
+        if(err){
+            return res.status(400).json({
+                title: 'error',
+                error: 'email in use'
+            })
+        }
+        return res.status(200).json ({
+            title: 'signup success'
+        })
+    })
     console.log(newUser);
     
 })
