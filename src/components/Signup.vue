@@ -4,6 +4,7 @@
        Email: <input type="text" v-model="email"/>
        Password: <input type="password" v-model="password"/>
        <button @click="signup">Register</button>
+       {{ error }}
     </div>
 
 </template>
@@ -13,15 +14,17 @@ export default {
     name: 'Signup',
     data() {
         return {
-        name: '',
+       
         email: '',
         password: '',
+
+        error: '',
         }
     },
     methods: {
         signup() {
             let newUser= {
-                name: this.name,
+              
                 email: this.email,
                 password: this.password
             }
@@ -29,9 +32,12 @@ export default {
            .then(res => {
                // eslint-disable-next-line no-console
                console.log(res)
+               this.error = '';
+               this.$router.push('/login');
            }, err=> {
                // eslint-disable-next-line no-console
                console.log(err.response)
+               this.error = err.response.data.error
            })
         }
     }
@@ -42,4 +48,5 @@ input {
     display: block;
 
 }
+
 </style>
