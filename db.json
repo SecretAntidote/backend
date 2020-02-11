@@ -1,0 +1,16 @@
+{
+  "videos": [
+    {
+      "YoutubeUrl": "https://www.youtube.com/watch?v=y9vJMHjKukQ",
+      "id": 1
+    },
+    {
+      "YoutubeUrl": "https://www.youtube.com/watch?v=yNrqlxn0nc0",
+      "id": 2
+    },
+    {
+      "YoutubeUrl": "https://stackoverflow.com/questions/53042690/refresh-boostrap-vue-table-after-deleting-a-row",
+      "id": 3
+    }
+  ]
+}

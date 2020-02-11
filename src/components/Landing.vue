@@ -22,7 +22,7 @@ export default {
         }
     },
      mounted() {
-    axios.get('http://localhost:3000/user', { headers: { token: localStorage.getItem('token')}})
+    axios.get('http://localhost:5000/user', { headers: { token: localStorage.getItem('token')}})
       .then(res => {
         this.name = res.data.user.name;
         this.email = res.data.user.email;
